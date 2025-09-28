@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+/* 
+        div.red.text-grey{
+            color: grey;
+        }
+
+        span, li.red{
+            background-color: red;
+        } */
+
+        /* ul > li{
+            color: red;
+        } */
+        
+        /* ul li{
+            color: red;
+        } */
+
+        /* for immediate child */
+        /* div > strong{
+            color: red;
+        } */
+/* 
+        li.red ~ li{
+            color: green;
+        } */
+
+        /* it can be nested child as well */
+
+        /* div strong{
+            color: red;
+        } */
+
+        /* pseudo classes */
+
+        li:hover{
+            background-color: red;
+
+        }
+
+        input:focus{
+            background-color: green;
+
+        }
+
+        /* li:first-child{
+            background-color: aqua ;
+        } */
+
+        /* li:last-child{
+            background-color: aqua ;
+        } */
+/* 
+        li:nth-child(2n - 1){
+            background-color: aqua ;
+        } */
+
+        
+        .span1::after{
+            content: ' suffix';
+            color: red;
+        }
+
+        .span1::before{
+            content: ' prefix ';
+            color: blue;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <h1>Grouping Selectors</h1>
+
+
+    <input >
+    <div class="red text-grey">This is a div</div>
+
+    <span class="span1">This is a span</span>
+
+    <div>
+        <span>
+            <strong>strong nested element</strong>
+        </span>
+    </div>
+
+    <ul>
+        <li>Item A</li>
+        <li class="red">Item B</li>
+        <li>Item C</li>
+        <li>Item D</li>
+    </ul>
+    
+</body>
+</html>

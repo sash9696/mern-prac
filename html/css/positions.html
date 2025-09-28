@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+
+        div.relative,
+        div.absolute,
+        div.fixed,
+        div.static,
+        div.sticky{
+            border:  2px solid;
+            height: 100px;
+            margin: 5px;
+        }
+
+        /* top left right bottom  */
+
+        div.relative{
+            position: relative;
+            top:10px;
+            left:10px;
+        }
+
+        div.fixed{
+            position: fixed;
+            width: 100%;
+            top: 0;
+            right: 0;
+            margin:0;
+            height: 60px;
+        }
+
+        div.parent{
+            /* position: relative; */
+            width: 400px;
+            height: 200px;
+            border: 2px solid;
+            margin-top: 100px;
+            margin-left: 100px;
+
+        }
+
+        div.absolute{
+            position: absolute;
+            width: 200px;
+            top: 0px;
+            left:0
+
+        }
+
+        div.sticky{
+            position: sticky;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <h1>Positioning</h1> -->
+
+    <!-- <div class="static"></div>
+    <div class="relative"></div> -->
+<!-- 
+    <div class="fixed">Navbar</div>
+
+    <div style="height: 200vh;"></div> -->
+
+    <!-- <div class="parent">
+        this is a div
+        <div class="absolute">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident amet 
+        </div>
+    </div> -->
+
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem illum recusandae corrupti hic alias ipsum temporibus sint, enim excepturi itaque ab, saepe placeat eveniet, iste vitae numquam sit error tempore?
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem illum recusandae corrupti hic alias ipsum temporibus sint, enim excepturi itaque ab, saepe placeat eveniet, iste vitae numquam sit error tempore?
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem illum recusandae corrupti hic alias ipsum temporibus sint, enim excepturi itaque ab, saepe placeat eveniet, iste vitae numquam sit error tempore?
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem illum recusandae corrupti hic alias ipsum temporibus sint, enim excepturi itaque ab, saepe placeat eveniet, iste vitae numquam sit error tempore?
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem illum recusandae corrupti hic alias ipsum temporibus sint, enim excepturi itaque ab, saepe placeat eveniet, iste vitae numquam sit error tempore?
+
+    <div class="sticky">This is a sticky div</div>
+
+    <div style="padding-bottom:200vh">
+        <p style="margin-top: 100px;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+        <p style="margin-top: 100px;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        </p>   <p style="margin-top: 100px;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        </p>   <p style="margin-top: 100px;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        </p>   <p style="margin-top: 100px;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        </p>   <p style="margin-top: 100px;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        </p>   <p style="margin-top: 100px;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        </p>   <p style="margin-top: 100px;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        </p>   <p style="margin-top: 100px;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        </p>   <p style="margin-top: 100px;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        </p>   <p style="margin-top: 100px;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        </p>   <p style="margin-top: 100px;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        </p>   <p style="margin-top: 100px;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+    </div>
+
+    
+</body>
+</html>
+
+<!-- 
+
+static => default position
+
+relative => is positioned relative to its original position
+
+fixed => is positioned relative to the viewport => always at the same position even if the page gets scrolled
+
+absolute => is posiitoned relative to its nearest positioned ancestor
+(in its ancestor has position of relative then it will be relative to it otherwise its nearest parent)
+
+sticky => relative plus fixed (based on user's scroll position)
+
+-->
+
+
+<!-- 
+
+
+1996 css1 -> floats
+
+1998 css2
+
+2010 css3 -> Responsive design
+2012 -> media queries, flexbox
+2017 -> grid
+intrinsic web design (rem, em, vw, %)
+2021 -> container queries
+-->
