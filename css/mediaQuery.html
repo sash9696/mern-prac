@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            text-align: center;
+        }
+
+        header{
+            background: green;
+            color: white;
+            padding: 20px;
+        }
+
+        .box{
+            display: inline-block;
+            background-color: aqua;
+            margin: 10px;
+            padding: 20px;
+            width: 90%;/* full width on mobile  */
+            box-sizing: border-box;
+
+        }
+
+
+        /* Mobile */
+
+        body{
+            background-color: antiquewhite;
+        }
+
+
+        /* Tablet */
+
+        @media(min-width: 600px) and (max-width: 899px){
+         body{
+            background-color: rgb(151, 120, 79);
+         }
+         .box{
+            background-color: rgb(74, 115, 115);
+            width: 45%;
+         }
+        }
+
+
+        /* Desktop */
+
+        @media(min-width: 900px){
+         body{
+            background-color: rgb(201, 142, 64);
+         }
+         .box{
+            background-color: aqua;
+            width: 30%;
+            max-width: 250px;
+         }
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Media Query</h1>
+    </header>
+
+    <div class="container">
+        <div class="box">Box1</div>
+        <div class="box">Box2</div>
+        <div class="box">Box3</div>
+
+
+    </div>
+    
+</body>
+</html>

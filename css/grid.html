@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid-container{
+            display: grid;
+            /* grid-template-columns: 200px 200px 200px; */
+            /* grid-template-columns: 1fr 1fr 1fr; */
+            grid-template-columns: repeat(3, 1fr);
+
+            background-color: rgb(160, 201, 236);
+
+            gap: 10px;
+        }
+        .item{
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    grid -> 2 dimensional layout 
+    grid lines-> grid is mde of lines 
+    3 column grid has 4 vertical lines
+
+    track -> the space b/w two grid lines
+
+    cell -> intersection of row and colum n track
+
+    gap -> space b/w tracks
+
+    grid area -> group of adjacent cells
+    -->
+    
+    <div class="grid-container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+
+    </div>
+
+</body>
+</html>
