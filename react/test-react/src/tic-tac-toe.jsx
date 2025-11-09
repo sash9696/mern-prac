@@ -19,66 +19,10 @@ function Square({ value, onSquareClick }) {
     </button>
   );
 }
-//[
-// [null, null, null, null, null, null, null, null, null] move 0
-// [null, null, null, "X", null, null, null, null, null] move 1
-// [null, null, null, "X", null, null, null, "O", null] move 2
-// [null, "X", null, "X", null, null, null, "O", null] move 3
-// ]
 
-
-function TicTacToe(){
-
+function Board() {
+  const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
-
-  const [history, setHistory] = useState([Array(9).fill(null)])
-
-  const [currentMove, setCurrentMove] = useState(0);
-
-  const currentSquares = history[currentMove];
-
-  function handlePlay(nextSquares){
-    const nextHistory= [...history.slice(0, currentMove + 1), nextSquares]
-    setHistory(nextHistory);
-    setCurrentMove(nextHistory.length - 1)
-    setXIsNext(!xIsNext)
-  }
-
-  function jummToMove(nextMove){
-    setCurrentMove(nextMove);
-    setXIsNext(nextMove % 2 === 0)
-  }
-
-
-  const moves = history.map((squares,move) => {
-    let desc;
-    if(move > 0){
-      desc = `Go to the move # ${move}`
-    }else{
-      desc = `Go to start of the game`
-    }
-    return (
-      <li>
-         <button onClick={() => jummToMove(move)} >{desc}</button>
-      </li>
-    )
-  })
-
-  return (
-    <div className="tictactoe">
-      <div>
-        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay}  />
-      </div>
-      <div className="info">
-        <ul>{moves}</ul>
-      </div>
-    </div>
-
-  );
-}
-
-
-function Board({xIsNext, squares, onPlay}) {
 
   function handleClick(i) {
     if (squares[i] || checkForWinner(squares)) {
@@ -93,9 +37,8 @@ function Board({xIsNext, squares, onPlay}) {
       nextSquares[i] = "O";
     }
 
-    onPlay(nextSquares); 
-
-
+    setSquares(nextSquares);
+    setXIsNext(!xIsNext);
     //when the state of parent component changes
     //all of its child components automatically re renders
   }
@@ -157,7 +100,7 @@ function checkForWinner(squares) {
 function App() {
   return (
     <div>
-      <TicTacToe />
+      <Board />
     </div>
   );
 }
