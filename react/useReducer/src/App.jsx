@@ -41,22 +41,53 @@ function cartReducer(state, action){
      }
     }
     case 'DECREASE_QTY':{
+
       //do something
-      return
+
+      const id = action.payload;
+
+      const newItems = state.items.map((i) => (
+        i.id === id ? {...i, qty:i.qty-1} : i
+      ))
+
+      //filter out those items whose quantity is > than 0
+
+      const filteredItems = newItems.filter((item) => item.qty > 0)
+
+
+      // return {
+      //   ...state,
+      //   items: filteredItems
+      // }
+      return {
+        ...state,
+        items: state.items.map((i) => (
+          i.id === id ? {...i, qty:i.qty-1} : i
+        )).filter((item) => item.qty > 0)
+      }
     }
     case 'REMOVE_FROM_CART':{
       //do something
-      return
+      const id = action.payload;
+      return {
+        ...state,
+        items:state.items.filter(i => i.id !== id)
+      }
     }
     case 'CLEAR_CART':{
       //do something
-      return
+      return {items:[]}
     }
     default:
       return state;
   }
 
 }
+
+const addToCart = (item) => ({
+  type : 'ADD_TO_CART',
+  payload: item
+})
 
 function ShoppingCart(){
 
@@ -85,7 +116,7 @@ function ShoppingCart(){
 
           <button style={{marginLeft:10}} 
           
-          onClick={() => dispatch({type:'ADD_TO_CART', payload:p})}
+          onClick={() => dispatch(addToCart(p))}
           >Add to cart</button>
         </div>
       ))}
@@ -107,9 +138,29 @@ function ShoppingCart(){
 
           <strong>{item.name}</strong>
           <span>QTY: {item.qty}</span>
+
+          <button
+          onClick={() => dispatch({type:'DECREASE_QTY', payload:item.id})}
+          >-</button>
+          
+          <button
+          onClick={() => dispatch(addToCart(item))}
+          >+</button>
+
+          <button
+            onClick={() => dispatch({type:'REMOVE_FROM_CART', payload:item.id})}
+          >Remove</button>
           
         </div>
       ))}
+
+      {state.items.length > 0 && (
+        <button
+        onClick={() => dispatch({type:'CLEAR_CART'})}
+        >
+          Clear Cart
+        </button>
+      )}
 
 
     </div>
